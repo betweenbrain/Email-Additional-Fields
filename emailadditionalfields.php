@@ -10,11 +10,11 @@
  */
 
 /**
- * An example custom contact plugin.
+ * Leverages the mystical onSubmitContact Joomla! plugin event to email additional field data added by plugins.
  *
  * @package    Joomla.Plugin
  * @subpackage Contact
- * @version    1.6
+ * @version    1.0
  */
 class plgContactEmailadditionalfields extends JPlugin
 {
@@ -23,7 +23,8 @@ class plgContactEmailadditionalfields extends JPlugin
 	 * @param array $data The associated data for the form.
 	 *
 	 * @return boolean
-	 * @since    1.6
+	 *
+	 * @since  1.0
 	 */
 	function onSubmitContact($contact, $data)
 	{
