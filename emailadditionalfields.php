@@ -32,7 +32,12 @@ class plgContactEmailadditionalfields extends JPlugin
 		{
 			if (!in_array($field, array('contact_name', 'contact_email', 'contact_subject', 'contact_message')))
 			{
-				$data['contact_message'] .= "\n" . ucfirst($field) . ': ' . $value;
+				$data['contact_message'] .= is_array($value) ?
+					implode("\n", array_map(function ($v, $k)
+					{
+						return ucfirst($k) . ': ' . $v;
+					}, $value, array_keys($value))) :
+					"\n" . ucfirst($field) . ': ' . $value;
 			}
 		}
 
