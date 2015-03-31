@@ -3,12 +3,12 @@
 	<author>Matt Thomas</author>
 	<authorEmail>matt@betweenbrain.com</authorEmail>
 	<authorUrl>http://betweenbrain.com</authorUrl>
-	<copyright>(C) 2014 betweenbrain llc. All rights reserved.</copyright>
-	<creationDate>August 1, 2014</creationDate>
+	<copyright>(C) 2014, 2015 betweenbrain llc. All rights reserved.</copyright>
+	<creationDate>March 31, 2015</creationDate>
 	<description>PLG_CONTACT_EMAILADDITIONALFIELDS_DESC</description>
 	<license>GNU/GPL v2 or later</license>
 	<name>plg_contact_emailadditionalfields</name>
-	<version>1.0</version>
+	<version>1.0.1</version>
 
 	<files>
 		<filename plugin="emailadditionalfields">emailadditionalfields.php</filename>
