@@ -26,7 +26,7 @@ class plgContactEmailadditionalfields extends JPlugin
 	 *
 	 * @since  1.0
 	 */
-	function onSubmitContact($contact, $data)
+	function onSubmitContact(&$contact, &$data)
 	{
 		foreach ($data as $field => $value)
 		{
