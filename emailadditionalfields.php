@@ -26,21 +26,53 @@ class plgContactEmailadditionalfields extends JPlugin
 	 *
 	 * @since  1.0
 	 */
-	function onSubmitContact(&$contact, &$data)
+	public function onSubmitContact(&$contact, &$data)
 	{
 		foreach ($data as $field => $value)
 		{
 			if (!in_array($field, array('contact_name', 'contact_email', 'contact_subject', 'contact_message')))
 			{
-				$data['contact_message'] .= is_array($value) ?
-					"\n" . implode("\n", array_map(function ($v, $k)
+
+				if (is_array($value))
+				{
+					foreach ($value as $label => $input)
 					{
-						return ucfirst($k) . ': ' . $v;
-					}, $value, array_keys($value))) :
-					"\n" . ucfirst($field) . ': ' . $value;
+						$data['contact_message'] .= "\n" . $this->getLabel($label) . ': ' . $input;
+					}
+				}
+
+				if (!is_array($value))
+				{
+					$data['contact_message'] .= "\n" . $this->getLabel($field) . ': ' . $value;
+				}
+
 			}
 		}
 
 		return $data;
+	}
+
+	/**
+	 * Checks if the JText translation of a dynamically generated constant has a value
+	 *
+	 * @param $label
+	 *
+	 * @return string
+	 *
+	 * @since 1.1.0
+	 */
+	private function getLabel($label)
+	{
+		$constant = 'PLG_CONTACT_EMAILADDITIONALFIELDS_' . strtoupper($label);
+
+		if (JText::_($constant) != $constant)
+		{
+			return JText::_('PLG_CONTACT_EMAILADDITIONALFIELDS_' . strtoupper($label));
+		}
+
+		if (JText::_($constant) == $constant)
+		{
+			return ucfirst($label);
+		}
 	}
 }
