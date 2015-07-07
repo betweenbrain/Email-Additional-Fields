@@ -28,6 +28,8 @@ class plgContactEmailadditionalfields extends JPlugin
 	 */
 	public function onSubmitContact(&$contact, &$data)
 	{
+		$data['contact_message'] .= "\n";
+
 		foreach ($data as $field => $value)
 		{
 			if (!in_array($field, array('contact_name', 'contact_email', 'contact_subject', 'contact_message')))
