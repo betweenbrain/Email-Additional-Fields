@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.2" type="plugin" group="contact" method="upgrade">
+<extension version="3.2"
+           type="plugin"
+           group="contact"
+           method="upgrade">
 	<author>Matt Thomas</author>
 	<authorEmail>matt@betweenbrain.com</authorEmail>
 	<authorUrl>http://betweenbrain.com</authorUrl>
@@ -14,5 +17,11 @@
 		<filename plugin="emailadditionalfields">emailadditionalfields.php</filename>
 		<folder>language</folder>
 	</files>
+
+	<updateservers>
+		<server type="extension"
+		        name="Email Additional Fields Updates">http://betweenbrain.com/updates/emailadditionalfields.xml
+		</server>
+	</updateservers>
 
 </extension>
