@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.2" type="plugin" group="contact" method="upgrade">
+<extension version="3.2"
+           type="plugin"
+           group="contact"
+           method="upgrade">
 	<author>Matt Thomas</author>
 	<authorEmail>matt@betweenbrain.com</authorEmail>
 	<authorUrl>http://betweenbrain.com</authorUrl>
 	<copyright>(C) 2014, 2015 betweenbrain llc. All rights reserved.</copyright>
-	<creationDate>April 7, 2015</creationDate>
+	<creationDate>May 20, 2015</creationDate>
 	<description>PLG_CONTACT_EMAILADDITIONALFIELDS_DESC</description>
 	<license>GNU/GPL v2 or later</license>
 	<name>plg_contact_emailadditionalfields</name>
-	<version>1.0.2</version>
+	<version>1.1.0</version>
 
 	<files>
 		<filename plugin="emailadditionalfields">emailadditionalfields.php</filename>
 		<folder>language</folder>
 	</files>
+
+	<updateservers>
+		<server type="extension"
+		        name="Email Additional Fields Updates">http://betweenbrain.com/updates/emailadditionalfields.xml
+		</server>
+	</updateservers>
 
 </extension>
